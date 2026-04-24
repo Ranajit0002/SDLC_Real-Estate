@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* PLAYFAIR DISPLAY FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* INTER FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ROBOTO FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CUSTOM COLORS AND FONTS */
+@theme {
+    --font-heading: "Playfair Display", serif;
+    --font-body:  "Roboto", sans-serif;
+    --font-accent:  "Inter", sans-serif;
+    --color-primary: #14213D;
+    --color-secondary: #FCA311;
+    --color-fadeWhite: #F8FEFF;
+    --color-fadeGrey: #F0F4F9;
+    --color-darkBlue: #1E1E1E;
+}
+
+/* CUSTOM UTILITY CLASSES */
+@utility container {
+    max-width: 1320px;
+    padding-inline: 16px;
+    margin: auto;
+}
+
+@utility common-padding {
+    padding-block: 95px;
+}
+
+/* @utility primary-btn {
+    
+} */
+
+@utility secondary-btn {
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 14px 30px;
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    font-size: 16px;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-primary);
+        border-color: transparent;
+        color: white;
+        transform: scale(0.9);
+    }
+}
+
+
+
+@layer base {
+    p {
+        /* color: var(--color-lightGrey); */
+        /* font-family: var(--font-secondary); */
+         @apply text-[14px] sm:text-[16px];
+    }
+    span {
+        /* font-family: var(--font-secondary); */
+         @apply text-[14px] sm:text-[16px];
+    }
+    h1 {
+        font-size: clamp(1.5rem,5vw,6rem);
+        line-height: 1;
+        color: white;
+        font-weight: 600;
+        font-family: var(--font-heading);
+    }
+    h2 {
+        font-size: clamp(1.2rem,5vw,3rem);
+        line-height: 1;
+        color: var(--color-darkBlue);
+        font-weight: 500;
+        font-family: var(--font-heading);
+        text-transform: capitalize;
+    }
+    h3 {
+        font-size: clamp(1rem,5vw,1.5rem);
+        line-height: 1;
+        font-weight: 500;
+        font-family: var(--font-body);
+        color: var(--color-primary);
+    }
+}
